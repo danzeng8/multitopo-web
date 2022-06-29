@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>To cut or to fill: A global optimization approach to topological simplification</title>
+  <title>Topological Simplification of Nested Shapes</title>
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <link href='main.css' rel='stylesheet' type='text/css'>
 </head>
@@ -15,7 +15,7 @@
     <!--<a href='#' id='pageTitle'>TopoSimplifier</a>-->
    
     <nav>
-       <h1 style="opacity: 1;">To cut or to fill: A global optimization approach to topological simplification</h1>
+       <h1 style="opacity: 1;">Topological Simplification of Nested Shapes</h1>
        <p><a class="authorNav" href="http://www.dan-zeng.com">Dan Zeng</a>, <a class="authorNav" href="https://cs.slu.edu/~chambers/">Erin Chambers</a>, <a class="authorNav" href="https://cs.slu.edu/people/letscher/">David Letscher</a>, <a class="authorNav" href="https://www.cse.wustl.edu/~taoju/">Tao Ju</a></p>
       <br>
       <a href='#paper'>Paper</a>
@@ -30,17 +30,17 @@
     <section id='paper'>
         <div class ="row" style="background-color: rgba(255, 192, 192, 0.8); opacity: 1; margin: 140px 100px 0 100px; height: 40%; border-radius: 20px; float: center;">
           <div class="column" align="center">
-            <p>This is the project website for our SIGGRAPH Asia 2020 paper
-              <br><i>"To cut or to fill: a global optimization approach to topological simplification"</i>
+            <p>This is the project website for our Symposium on Geometry Processing 2022 paper
+              <br><i>"Topological Simplification of Nested Shapes"</i>
             </p>
             <p>
               <b>Authors: </b><a href="http://www.dan-zeng.com">Dan Zeng</a>, <a href="https://cs.slu.edu/~chambers/">Erin Chambers</a>, <a href="https://cs.slu.edu/people/letscher">David Letscher</a>, <a href="https://www.cse.wustl.edu/~taoju/">Tao Ju</a>
             </p>
             <p>
-            ACM Transactions on Graphics (Proc. ACM Siggraph Asia 2020), 39(6): No. 201
+            Computer Graphics Forum (Proc. SGP 2022), 41(5).
             </p>
-            <p> <b>Abstract:</b> We present a novel algorithm for simplifying the topology of a 3D shape, which is characterized by the number of connected components, handles, and cavities. Existing methods either limit their modifications to be only cutting or only filling, or take a heuristic approach to decide where to cut or fill. We consider the problem of finding a globally optimal set of cuts and fills that achieve the simplest topology while minimizing geometric changes. We show that the problem can be formulated as graph labelling, and we solve it by a transformation to the Node-Weighted Steiner Tree problem. When tested on examples with varying levels of topological complexity, the algorithm shows notable improvement over existing simplification methods in both topological simplicity and geometric distortions.</p>
-            <a href="images\topological_simplification.pdf"><h3 style="text-align:center;">View/Download Paper</h3>
+            <p> <b>Abstract:</b> We present a method for removing unwanted topological features (e.g., islands, handles, cavities) from a sequence of shapes where each shape is nested in the next. Such sequences can be found in nature, such as a multi-layered material or a growing plant root. Existing topology simplification methods are designed for single shapes, and applying them independently to shapes in a sequence may lose the nesting property. We formulate the nesting-constrained simplification task as an optimal labelling problem on a set of candidate shape deletions (``cuts'') and additions (``fills''). We explored several optimization strategies, including a greedy heuristic that sequentially propagates labels, a state-space search algorithm that is provably optimal, and a beam-search variant with controllable complexity. Evaluation on synthetic and real-world data shows that our method is as effective as single-shape simplification methods in reducing topological complexity and minimizing geometric changes, and it additionally ensures nesting. Also, the beam-search strategy is found to strike the best balance between optimality and efficiency.</p>
+            <a href="images\nested_self.pdf"><h3 style="text-align:center;">View/Download Paper</h3>
             <img src="images/page1.PNG" style="display:block; margin: auto; width: 30%;">
 
             </a>
@@ -81,7 +81,9 @@
                 <span class="dotactive" onclick="currentSlide(4)"></span> 
               </div>
             </div>-->
-            <iframe style="width: 100%; min-height: 500px; margin-top: 10%; margin-bottom: 10%;" src="https://www.youtube.com/embed/obyeYb2ejgI"> </iframe>
+            <!--
+            <iframe style="width: 100%; min-height: 500px; margin-top: 10%; margin-bottom: 10%;" src="https://www.youtube.com/embed/obyeYb2ejgI"> </iframe>-->
+            <h2>Presentation video coming soon</h2>
 
             <!--https://www.youtube.com/watch?v=IoHAUJb-Xvk 630" height="518-->
           </div>
