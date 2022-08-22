@@ -37,7 +37,7 @@
             <p>
             Computer Graphics Forum (Proc. SGP 2022), 41(5).
             </p>
-            <p> <b>Abstract:</b> We present a method for removing unwanted topological features (e.g., islands, handles, cavities) from a sequence of shapes where each shape is nested in the next. Such sequences can be found in nature, such as a multi-layered material or a growing plant root. Existing topology simplification methods are designed for single shapes, and applying them independently to shapes in a sequence may lose the nesting property. We formulate the nesting-constrained simplification task as an optimal labelling problem on a set of candidate shape deletions (``cuts'') and additions (``fills''). We explored several optimization strategies, including a greedy heuristic that sequentially propagates labels, a state-space search algorithm that is provably optimal, and a beam-search variant with controllable complexity. Evaluation on synthetic and real-world data shows that our method is as effective as single-shape simplification methods in reducing topological complexity and minimizing geometric changes, and it additionally ensures nesting. Also, the beam-search strategy is found to strike the best balance between optimality and efficiency.</p>
+            <p> <b>Abstract:</b> We present a method for removing unwanted topological features (e.g., islands, handles, cavities) from a sequence of shapes where each shape is nested in the next. Such sequences can be found in nature, such as a multi-layered material or a growing plant root. Existing topology simplification methods are designed for single shapes, and applying them independently to shapes in a sequence may lose the nesting property. We formulate the nesting-constrained simplification task as an optimal labelling problem on a set of candidate shape deletions (cuts) and additions (fills). We explored several optimization strategies, including a greedy heuristic that sequentially propagates labels, a state-space search algorithm that is provably optimal, and a beam-search variant with controllable complexity. Evaluation on synthetic and real-world data shows that our method is as effective as single-shape simplification methods in reducing topological complexity and minimizing geometric changes, and it additionally ensures nesting. Also, the beam-search strategy is found to strike the best balance between optimality and efficiency.</p>
             <a href="images\nested_self.pdf"><h3 style="text-align:center;">View/Download Paper</h3>
             <img src="images/page1.PNG" style="display:block; margin: auto; width: 30%;">
 
@@ -45,43 +45,22 @@
           </div>
 
           <div class="column" >
-            <!--<div class="slideshow-container" style="display: block; margin: auto;">
-
-              <div class="mySlides fade" >
-
-                <img src="images/hipS.png" style="width:70%; margin: auto; display: block;">
-                <div class="text">Given an input shape with topological features...</div>
-              </div>
-
-              <div class="mySlides fade">
-                <img src="images/hipAllCutsAndFills.png" style="width:70%; margin: auto; display: block;">
-                <div class="text">...we compute a set of cuts (red) and fills (blue) to simplify topology...</div>
-              </div>
-
-              <div class="mySlides fade">
-                <img src="images/hipSelectedCutsAndFills.png" style="width:70%; margin: auto; display: block;">
-                <div class="text">...select the subset which most simplifies topology while minimizing a geometric score...</div>
-              </div>
-
-               <div class="mySlides fade">
-                <img src="images/hipResult.png" style="width:70%; margin: auto; display: block;">
-                <div class="text">...to produce a simplified shape. </div>
-              </div>
-
-
-            </div>
-
-            <div style="text-align:center">
-              <div style="text-align:center">
-                <span class="dotactive" onclick="currentSlide(1)"></span> 
-                <span class="dotactive" onclick="currentSlide(2)"></span> 
-                <span class="dotactive" onclick="currentSlide(3)"></span>
-                <span class="dotactive" onclick="currentSlide(4)"></span> 
-              </div>
-            </div>-->
+            
+            
             <!--
             <iframe style="width: 100%; min-height: 500px; margin-top: 10%; margin-bottom: 10%;" src="https://www.youtube.com/embed/obyeYb2ejgI"> </iframe>-->
-            <h2>Presentation video coming soon</h2>
+            <h3 style="text-align: center;">
+	         <a href="images\nested_sgp22.pptx">
+	          Presentation (ppt)
+	         </a>
+	          | 
+	         <a href="images\nested_sgp22.pdf">
+	          PDF (no animations)
+	         </a>
+	       </h3>
+	       <a href="images\nested_sgp22.pptx">
+	       	<img style="width: 100%; margin-top: 0%; margin-bottom: 10%;" src="images/result_roots.png">
+	   		</a>
 
             <!--https://www.youtube.com/watch?v=IoHAUJb-Xvk 630" height="518-->
           </div>
@@ -147,6 +126,33 @@ function currentSlide(n) {
       <h4>
         <a href="https://drive.google.com/drive/folders/1QZRpfTymGDKu6qqkpyTQ5-1UN_uSAFOV?usp=sharing" style="text-align: center;">Input</a> | <a href="https://drive.google.com/drive/folders/1Fau0RHaQSI7VJUChMD0GG1Kl-DBpnu5a?usp=sharing" style="text-align: center;">Output</a>
       </h4> 
+
+      <button type="button" class="collapsible">Grayscale retinal vessel</button>
+      <div class="content">
+      <img src="images/retina_SGP.PNG" width='70%'>
+      <p style="margin: auto; display: block; text-align: center;"><i>Command to reproduce this result:</i>MultiTopo --in examples_in/angiography.tif --out examples_out/angiography_out.tif  --S "105 120 135 150 165 180 --inFileType 1</p>
+      </div>
+
+      <button type="button" class="collapsible">Human brain vessels (segmented from Angiography)</button>
+      <div class="content">
+      <p>This is the same input shape as the human brain vessel in the distance-based example below, but now the image intensity is used to generate the cuts and fills.</p>p>
+      <img src="images/fig15.PNG" width='50%'>
+
+      <p style="text-align: left;">Paper Fig. 15. The shape after subtracting intensity-aware cut voxels (a) or adding
+      intensity-aware fill voxels (b), and after running our algorithm with the
+      intensity-aware cuts and fills (c) or distance-based cuts and fills (d). The
+      inserts in (a,b) show the inner and outer seeds used for inflation and deflation.
+      The inserts in (c,d) examine a region where the same handle is
+      removed differently in the two results, either separating the two vessels (c)
+      or breaking a vessel in the middle (d). (β: number of
+      connected components, handles, and cavities; д: geometric cost)</p>
+      <p style="margin: auto; display: block; text-align: center;"><i>Command to reproduce this result:</i>TopoSimplifier --in examples_in/vessels_intensity/ --out examples_out/vessels_intensity_out/ --K 121 --S 58 --N 50 </p>
+
+      <br>
+              <p style="margin: auto; display: block; text-align: center;">For visualization of output in UCSF Chimera: Set iso-surface threshold to 58 in Volume Viewer.</p>
+      </div>
+
+
     </section>
 
     <section id = 'contact' style="background-color: rgba(255, 192, 192, 0.8); opacity: 1; margin: 40px 100px 0 100px; border-radius: 20px; float: center;">
