@@ -20,7 +20,7 @@
       <br>
       <a href='#paper'>Paper</a>
       <a href="https://github.com/danzeng8/MultiTopo">Code</a>
-      <a href='#examples'>Examples</a>
+      <a href='#examples'>Data</a>
       <a href='#contact'>Contact</a>
     </nav>
   </header>
@@ -117,40 +117,13 @@ function currentSlide(n) {
      <br><br><br>
     <section id = 'examples' style="background-color: rgba(255, 192, 192, 0.8); opacity: 1; margin: 0px 100px 0 100px; border-radius: 20px; float: center;">
       <br>
-      <h1>Examples</h1>
-      <p style="text-align: left;">
-        Provided here are the examples used in the figures of the paper, as well as a few others. We have applied our algorithm to simplify shapes coming from a variety of domains in both biomedical and plant imaging. 
-      </p>
+      <h1>Data</h1>
+
       
       <h3 style="text-align: center;">Download Data</h3>
       <h4>
         <a href="https://drive.google.com/drive/folders/1QZRpfTymGDKu6qqkpyTQ5-1UN_uSAFOV?usp=sharing" style="text-align: center;">Input</a> | <a href="https://drive.google.com/drive/folders/1Fau0RHaQSI7VJUChMD0GG1Kl-DBpnu5a?usp=sharing" style="text-align: center;">Output</a>
       </h4> 
-
-      <button type="button" class="collapsible">Grayscale retinal vessel</button>
-      <div class="content">
-      <img src="images/retina_SGP.PNG" width='70%'>
-      <p style="margin: auto; display: block; text-align: center;"><i>Command to reproduce this result:</i>MultiTopo --in examples_in/angiography.tif --out examples_out/angiography_out.tif  --S "105 120 135 150 165 180 --inFileType 1</p>
-      </div>
-
-      <button type="button" class="collapsible">Human brain vessels (segmented from Angiography)</button>
-      <div class="content">
-      <p>This is the same input shape as the human brain vessel in the distance-based example below, but now the image intensity is used to generate the cuts and fills.</p>p>
-      <img src="images/fig15.PNG" width='50%'>
-
-      <p style="text-align: left;">Paper Fig. 15. The shape after subtracting intensity-aware cut voxels (a) or adding
-      intensity-aware fill voxels (b), and after running our algorithm with the
-      intensity-aware cuts and fills (c) or distance-based cuts and fills (d). The
-      inserts in (a,b) show the inner and outer seeds used for inflation and deflation.
-      The inserts in (c,d) examine a region where the same handle is
-      removed differently in the two results, either separating the two vessels (c)
-      or breaking a vessel in the middle (d). (β: number of
-      connected components, handles, and cavities; д: geometric cost)</p>
-      <p style="margin: auto; display: block; text-align: center;"><i>Command to reproduce this result:</i>TopoSimplifier --in examples_in/vessels_intensity/ --out examples_out/vessels_intensity_out/ --K 121 --S 58 --N 50 </p>
-
-      <br>
-              <p style="margin: auto; display: block; text-align: center;">For visualization of output in UCSF Chimera: Set iso-surface threshold to 58 in Volume Viewer.</p>
-      </div>
 
 
     </section>

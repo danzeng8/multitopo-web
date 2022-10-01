@@ -17,5 +17,3 @@ function scaleFullImages(pageWidth) {
 function onResize() {
   scaleFullImages(document.documentElement.clientWidth);
 }
-
-window.addEventListener("resize", onResize)

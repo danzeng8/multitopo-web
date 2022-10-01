@@ -13,7 +13,7 @@ body {
 
 body::after {
   content: "";
-  background-image: url("images/retinal.jpg");
+  background-image: url("images/rootBg.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
